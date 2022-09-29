@@ -1,0 +1,298 @@
+/**
+Namngivningsstandard
+
+BEM = Block element modifier
+
+.welcome - block
+
+.welcome__button - element
+
+.welcome__button--primary - modifier
+
+.welcome__button
+
+**/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #EBEBEB;
+    width: 100vw;
+    height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+}
+
+h1 {
+    font-size: 2.6rem;
+    margin: 0;
+    color: #fff;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin: 0;
+    color: #fff;
+}
+  
+p {
+    font-family: 'Fira Sans', sans-serif;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.join-button {
+    background-color: #fff;
+    text-transform: uppercase;
+    padding: 0 2rem;
+    border: none;
+    height: 2.5rem;
+    border-radius: 999rem;
+    cursor: pointer;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: auto;
+    grid-template-areas:
+    "welcome welcome welcome learn learn learn"
+    "welcome welcome welcome join join join"
+    ". navigation navigation navigation navigation ."
+    "info info info info info info"
+    "cards cards cards cards cards cards"
+    "about about about about about about"
+    "how how how how how how"
+    "up up up up up up"
+    "footer footer footer footer footer footer";
+}
+
+.welcome {
+    grid-area: welcome;
+    height: 35rem;
+    background-color: #C7DDEA;
+    background-image: url("../img/family.png");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: 90% bottom;
+    padding: 4rem;
+}
+
+.welcome__heading {
+    color: #000000;
+}
+
+.welcome__text {
+    margin-bottom: 3rem;
+}
+
+.welcome__text span {
+    color: #fff;
+}
+
+.learn {
+    grid-area: learn;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F17949;
+}
+
+.join {
+    grid-area: join;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FAB131;
+}
+
+.navigation {
+    grid-area: navigation;
+    display: flex;
+    justify-content: space-around;
+    padding: 1.2rem;
+}
+
+.navigation__link {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.navigation__link--active {
+    color: #000000;
+}
+
+.info {
+    grid-area: info;
+    height: 40rem;
+    background-color: #A9A19E;
+    display: flex;
+}
+
+.info__join {
+    max-width: 500px;
+    padding: 5rem;
+}
+
+.info__join h1 {
+    margin-bottom: 3rem;
+}
+
+.info__text {
+    max-width: 420px;
+    padding: 5rem;
+}
+
+.cards {
+    grid-area: cards;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 2rem 0rem 2rem;
+    background-color: #FAB131;
+    margin-bottom: -8rem;
+}
+
+.cards__card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #EBEBEB;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 0.5rem;
+    max-width: 275px;
+    transform: translateY(-200px);
+}
+
+.cards__card .cards__children, .cards__just-right, .cards__old-fart {
+    width: 100%;
+    height: 10rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    margin: 0;
+    transform: translateY(-50px);
+}
+
+.cards__children {
+    background-color: #C7DDEA;
+    background-image: url("../img/child.png");
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center -55%;
+}
+
+.cards__just-right {
+    background-color: #FAB131;
+    background-image: url("../img/adult.png");
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center -5%;
+}
+
+.cards__old-fart {
+    background-color: #F17949;
+    background-image: url("../img/old.png");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center -7%;
+}
+
+.cards__card h3 {
+    margin: 0;
+}
+
+.cards__card p {
+    font-size: 0.7rem;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem;
+}
+
+.about {
+    grid-area: about;
+    background-color: #FAB131;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 8rem;
+    text-align: center;
+}
+
+.about__text {
+    max-width: 500px;
+}
+
+.how {
+    grid-area: how;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: auto;
+}
+
+.how__box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    height: 16rem;
+    position: relative;
+}
+
+.how__box--blue {
+    background-color: #C7DDEA;
+}
+
+.how__box--grey {
+    background-color: #EBEBEB;
+}
+
+.how__box--red {
+    background-color: #F17949;
+}
+
+.how__box aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1.5rem;
+    font-size: 2.5rem;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.how__box h2 {
+    color: #000000;
+    text-align: center;
+}
+
+.up {
+    grid-area: up;
+    background-color: #A9A19E;
+    height: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.footer {
+    grid-area: footer;
+    height: 20rem;
+    background-color: #777574;
+}
